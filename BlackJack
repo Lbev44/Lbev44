@@ -33,6 +33,9 @@ while True:
         value = 10
     else:
         value = card1
+    print()
+    print()
+    print()
     print("Your first card is... " + str(first) + "!")
 
 
@@ -284,10 +287,10 @@ while True:
                     print("Dealer BUSTS! YOU WIN!")
                 else:
                     print("The dealer stays with " + str(valued + valueu + valueu2) + ".")
-                    if (valued + valueu + valueu2 + valueu3) > sum:
+                    if (valued + valueu + valueu2) > sum:
                         print("DEALER WINS!")
                         exit
-                    elif (valued + valueu + valueu2 + valueu3) == sum:
+                    elif (valued + valueu + valueu2) == sum:
                         print("You PUSH!")
                         exit                    
                     else: 
@@ -306,7 +309,7 @@ while True:
                 exit
     elif hs == "h":
         print("You pulled a " + str(third) + ".")
-        print(" Your total is " + str(sum + value3) + ".")
+        print("***Your total is " + str(sum + value3) + ".")
         if (sum + value3) > 21:
             print("YOU BUSTED!")
             exit
@@ -314,7 +317,7 @@ while True:
             print("Press h if you want to hit or s if you want to stay.")
             hs1 = input()
             if hs1 == "s": #sum + value3
-                print("You stayed with " + str(sum + value3) + ".")
+                print("***You stayed with " + str(sum + value3) + ".")
                 print()
                 print("The dealer flips a " + str(dealu) + ".")
                 if (dealershow > 9 and dealerunder == 1) or (dealershow == 1 and dealerunder > 9):
@@ -373,7 +376,7 @@ while True:
                         exit
             elif hs1 == "h":
                 print("You pulled a " + str(fourth) + ".")
-                print(" Your total is " + str(sum + value3 + value4) + ".")
+                print("***Your total is " + str(sum + value3 + value4) + ".")
                 if (sum + value3 + value4) > 21:
                     print("YOU BUSTED!")
                     exit
@@ -381,7 +384,7 @@ while True:
                     print("Press h if you want to hit or s if you want to stay.")
                     hs2 = input()
                     if hs2 == "s": #sum + value3 + value4
-                        print("You stayed with " + str(sum + value3 + value4) + ".")
+                        print("***You stayed with " + str(sum + value3 + value4) + ".")
                         print()
                         print("The dealer flips a " + str(dealu) + ".")
                         if (dealershow > 9 and dealerunder == 1) or (dealershow == 1 and dealerunder > 9):
