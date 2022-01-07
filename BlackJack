@@ -1,0 +1,442 @@
+
+
+import random, sys, os, math
+
+print("Welcome to BLACKJACK!")
+
+while True:
+    while True:
+        print(">>>>Play BLACKJACK? (y)es or (n)o?<<<<")
+        play = input()
+        if play == "n":
+            exit
+        if play == "y":
+            break
+
+    card1 = random.randint(1,13) #card 1
+    if card1 == 11:
+        first = "JACK"
+    elif card1 == 12:
+        first = "QUEEN"
+    elif card1 == 13:
+        first = "KING"
+    elif card1 == 1:
+        first = "ACE"
+    else:
+        first = card1
+
+    if card1 == 11:
+        value = 10
+    elif card1 == 12:
+        value = 10
+    elif card1 == 13:
+        value = 10
+    else:
+        value = card1
+    print("Your first card is... " + str(first) + "!")
+
+
+    card2 = random.randint(1,13) #card 2
+    if card2 == 11:
+        sec = "JACK"
+    elif card2 == 12:
+        sec = "QUEEN"
+    elif card2 == 13:
+        sec = "KING"
+    elif card2 == 1:
+        sec = "ACE"
+    else:
+        sec = card2
+
+    if card2 == 11:
+        value2 = 10
+    elif card2 == 12:
+        value2 = 10
+    elif card2 == 13:
+        value2 = 10
+    else:
+        value2 = card2
+    print("Your second card is... " + str(sec) + "!")
+
+    card3 = random.randint(1,13) #card 3
+    if card3 == 11:
+        third = "JACK"
+    elif card3 == 12:
+        third = "QUEEN"
+    elif card3 == 13:
+        third = "KING"
+    elif card3 == 1:
+        third = "ACE"
+    else:
+        third = card3
+
+    if card3 == 11:
+        value3 = 10
+    elif card3 == 12:
+        value3 = 10
+    elif card3 == 13:
+        value3 = 10
+    else:
+        value3 = card3
+
+    card4 = random.randint(1,13) #card 4
+    if card4 == 11:
+        fourth = "JACK"
+    elif card4 == 12:
+        fourth = "QUEEN"
+    elif card4 == 13:
+        fourth = "KING"
+    elif card4 == 1:
+        fourth = "ACE"
+    else:
+        fourth = card4
+
+    if card4 == 11:
+        value4 = 10
+    elif card4 == 12:
+        value4 = 10
+    elif card4 == 13:
+        value4 = 10
+    else:
+        value4 = card4
+
+    card5 = random.randint(1,13) #card5
+    if card5 == 11:
+        fifth = "JACK"
+    elif card5 == 12:
+        fifth = "QUEEN"
+    elif card5 == 13:
+        fifth = "KING"
+    elif card5 == 1:
+        fifth = "ACE"
+    else:
+        fifth = card5
+
+    if card5 == 11:
+        value5 = 10
+    elif card5 == 12:
+        value5 = 10
+    elif card5 == 13:
+        value5 = 10
+    else:
+        value5 = card5
+
+    card6 = random.randint(1,13) #card 6
+    if card6 == 11:
+        sixth = "JACK"
+    elif card6 == 12:
+        sixth = "QUEEN"
+    elif card6 == 13:
+        sixth = "KING"
+    elif card6 == 1:
+        sixth = "ACE"
+    else:
+        sixth = card6
+
+    if card6 == 11:
+        value6 = 10
+    elif card6 == 12:
+        value6 = 10
+    elif card6 == 13:
+        value6 = 10
+    else:
+        value6 = card6
+
+
+    dealershow = random.randint(1,13) #dealer up
+    if dealershow == 11:
+        deal = "JACK"
+    elif dealershow == 12:
+        deal = "QUEEN"
+    elif dealershow == 13:
+        deal = "KING"
+    elif dealershow == 1:
+        deal = "ACE"
+    else:
+        deal = dealershow
+
+    if dealershow == 11:
+        valued = 10
+    elif dealershow == 12:
+        valued = 10
+    elif dealershow == 13:
+        valued = 10
+    else:
+        valued = dealershow
+
+    dealerunder = random.randint(1,13) #dealer down
+    if dealerunder == 11:
+        dealu = "JACK"
+    elif dealerunder == 12:
+        dealu = "QUEEN"
+    elif dealerunder == 13:
+        dealu = "KING"
+    elif dealerunder == 1:
+        dealu = "ACE"
+    else:
+        dealu = dealerunder
+
+    if dealerunder == 11:
+        valueu = 10
+    elif dealerunder == 12:
+        valueu = 10
+    elif dealerunder == 13:
+        valueu = 10
+    else:
+        valueu = dealerunder
+
+    dealerunder2 = random.randint(1,13) #dealer first pull
+    if dealerunder2 == 11:
+        dealu2 = "JACK"
+    elif dealerunder2 == 12:
+        dealu2 = "QUEEN"
+    elif dealerunder2 == 13:
+        dealu2 = "KING"
+    elif dealerunder2 == 1:
+        dealu2 = "ACE"
+    else:
+        dealu2 = dealerunder2
+
+    if dealerunder2 == 11:
+        valueu2 = 10
+    elif dealerunder2 == 12:
+        valueu2 = 10
+    elif dealerunder2 == 13:
+        valueu2 = 10
+    else:
+        valueu2 = dealerunder2
+
+    dealerunder3 = random.randint(1,13) #dealer 2nd pull
+    if dealerunder3 == 11:
+        dealu3 = "JACK"
+    elif dealerunder3 == 12:
+        dealu3 = "QUEEN"
+    elif dealerunder3 == 13:
+        dealu3 = "KING"
+    elif dealerunder3 == 1:
+        dealu3 = "ACE"
+    else:
+        dealu3 = dealerunder3
+
+    if dealerunder3 == 11:
+        valueu3 = 10
+    elif dealerunder3 == 12:
+        valueu3 = 10
+    elif dealerunder3 == 13:
+        valueu3 = 10
+    else:
+        valueu3 = dealerunder3
+
+    sum = value + value2
+    if (card1 > 9 and card2 == 1) or (card1 == 1 and card2 > 9): #blackjack
+        print(">>>BLACKJACK!! YOU WIN!!!")
+        exit
+    elif (card1 == 1 and card2 <= 9) or (card2 == 1 and card1 <=9):
+        print("***YOUR TOTAL IS " + str(sum) + " or " + str(sum + 10) + "!")
+        print()
+        print("***The dealer is showing... " + str(deal) + ".")
+    else:
+        print("***YOUR TOTAL IS " + str(sum) + "!")
+        print()
+        print("***The dealer is showing... " + str(deal) + ".")
+
+    if (card1 > 9 and card2 == 1) or (card1 == 1 and card2) > 9: #blackjack
+        exit
+    else:
+        print("Press h if you want to hit or s if you want to stay.")
+
+    hs = input()
+    if hs == "s": #sum (first two)
+        print("You stayed with " + str(sum) + ".")
+        print()
+        print("The dealer flips a " + str(dealu) + ".")
+        if (dealershow > 9 and dealerunder == 1) or (dealershow == 1 and dealerunder > 9):
+            print("Dealer has BLACKJACK!")
+            if sum == (valued + valueu):
+                print("You PUSH.")
+                exit
+            else:
+                print("DEALER WINS!")
+                exit
+        else:
+            print("The dealer has " + str(valued + valueu) + ".")
+        if (valued+valueu) < 17:
+            print("The dealer pulls a " + str(dealu2) + ".")
+            print("The dealer has " + str(valued + valueu + valueu2) + ".")
+            if(valued + valueu + valueu2) < 17:
+                print("The dealer pulls a " + str(dealu3) + ".")
+                print("The dealer has " + str(valued + valueu + valueu2 + valueu3) + ".")
+                if (valued + valueu + valueu2 + valueu3) > 21:
+                    print("Dealer BUSTS! YOU WIN!")
+                else:
+                    print("The dealer stays with " + str(valued + valueu + valueu2 + valueu3) + ".")
+                    if (valued + valueu + valueu2 + valueu3) > sum:
+                        print("DEALER WINS!")
+                        exit
+                    elif (valued + valueu + valueu2 + valueu3) == sum:
+                        print("You PUSH!")
+                        exit                    
+                    else: 
+                        print("YOU WIN!")
+                        exit
+            else:
+                if (valued + valueu + valueu2) > 21:
+                    print("Dealer BUSTS! YOU WIN!")
+                else:
+                    print("The dealer stays with " + str(valued + valueu + valueu2) + ".")
+                    if (valued + valueu + valueu2 + valueu3) > sum:
+                        print("DEALER WINS!")
+                        exit
+                    elif (valued + valueu + valueu2 + valueu3) == sum:
+                        print("You PUSH!")
+                        exit                    
+                    else: 
+                        print("YOU WIN!")
+                        exit
+        else:
+            print("The dealer stays with " + str(valued + valueu) + ".")
+            if (valued + valueu + valueu2 + valueu3) > sum:
+                print("DEALER WINS!")
+                exit
+            elif (valued + valueu + valueu2 + valueu3) == sum:
+                print("You PUSH!")
+                exit                    
+            else: 
+                print("YOU WIN!")
+                exit
+    elif hs == "h":
+        print("You pulled a " + str(third) + ".")
+        print(" Your total is " + str(sum + value3) + ".")
+        if (sum + value3) > 21:
+            print("YOU BUSTED!")
+            exit
+        else: 
+            print("Press h if you want to hit or s if you want to stay.")
+            hs1 = input()
+            if hs1 == "s": #sum + value3
+                print("You stayed with " + str(sum + value3) + ".")
+                print()
+                print("The dealer flips a " + str(dealu) + ".")
+                if (dealershow > 9 and dealerunder == 1) or (dealershow == 1 and dealerunder > 9):
+                    print("Dealer has BLACKJACK!")
+                    if sum + value3 == (valued + valueu):
+                        print("You PUSH.")
+                        exit
+                    else:
+                        print("DEALER WINS!")
+                        exit
+                else:
+                    print("The dealer has " + str(valued + valueu) + ".")
+                if (valued+valueu) < 17:
+                    print("The dealer pulls a " + str(dealu2) + ".")
+                    print("The dealer has " + str(valued + valueu + valueu2) + ".")
+                    if(valued + valueu + valueu2) < 17:
+                        print("The dealer pulls a " + str(dealu3) + ".")
+                        print("The dealer has " + str(valued + valueu + valueu2 + valueu3) + ".")
+                        if (valued + valueu + valueu2 + valueu3) > 21:
+                            print("Dealer BUSTS! YOU WIN!")
+                        else:
+                            print("The dealer stays with " + str(valued + valueu + valueu2 + valueu3) + ".")
+                            if (valued + valueu + valueu2 + valueu3) > sum + value3:
+                                print("DEALER WINS!")
+                                exit
+                            elif (valued + valueu + valueu2 + valueu3) == sum + value3:
+                                print("You PUSH!")
+                                exit                    
+                            else: 
+                                print("YOU WIN!")
+                                exit
+                    else:
+                        if (valued + valueu + valueu2) > 21:
+                            print("Dealer BUSTS! YOU WIN!")
+                        else:
+                            print("The dealer stays with " + str(valued + valueu + valueu2) + ".")
+                            if (valued + valueu + valueu2 + valueu3) > sum + value3:
+                                print("DEALER WINS!")
+                                exit
+                            elif (valued + valueu + valueu2 + valueu3) == sum + value3:
+                                print("You PUSH!")
+                                exit                    
+                            else: 
+                                print("YOU WIN!")
+                                exit
+                else:
+                    print("The dealer stays with " + str(valued + valueu) + ".")
+                    if (valued + valueu + valueu2 + valueu3) > sum + value3:
+                        print("DEALER WINS!")
+                        exit
+                    elif (valued + valueu + valueu2 + valueu3) == sum + value3:
+                        print("You PUSH!")
+                        exit                    
+                    else: 
+                        print("YOU WIN!")
+                        exit
+            elif hs1 == "h":
+                print("You pulled a " + str(fourth) + ".")
+                print(" Your total is " + str(sum + value3 + value4) + ".")
+                if (sum + value3 + value4) > 21:
+                    print("YOU BUSTED!")
+                    exit
+                else: 
+                    print("Press h if you want to hit or s if you want to stay.")
+                    hs2 = input()
+                    if hs2 == "s": #sum + value3 + value4
+                        print("You stayed with " + str(sum + value3 + value4) + ".")
+                        print()
+                        print("The dealer flips a " + str(dealu) + ".")
+                        if (dealershow > 9 and dealerunder == 1) or (dealershow == 1 and dealerunder > 9):
+                            print("Dealer has BLACKJACK!")
+                            if sum + value3 + value4 == (valued + valueu):
+                                print("You PUSH.")
+                                exit
+                            else:
+                                print("DEALER WINS!")
+                                exit
+                        else:
+                            print("The dealer has " + str(valued + valueu) + ".")
+                        if (valued+valueu) < 17:
+                            print("The dealer pulls a " + str(dealu2) + ".")
+                            print("The dealer has " + str(valued + valueu + valueu2) + ".")
+                            if(valued + valueu + valueu2) < 17:
+                                print("The dealer pulls a " + str(dealu3) + ".")
+                                print("The dealer has " + str(valued + valueu + valueu2 + valueu3) + ".")
+                                if (valued + valueu + valueu2 + valueu3) > 21:
+                                    print("Dealer BUSTS! YOU WIN!")
+                                else:
+                                    print("The dealer stays with " + str(valued + valueu + valueu2 + valueu3) + ".")
+                                    if (valued + valueu + valueu2 + valueu3) > sum + value3 + value4:
+                                        print("DEALER WINS!")
+                                        exit
+                                    elif (valued + valueu + valueu2 + valueu3) == sum + value3 + value4:
+                                        print("You PUSH!")
+                                        exit                    
+                                    else: 
+                                        print("YOU WIN!")
+                                        exit
+                            else:
+                                if (valued + valueu + valueu2) > 21:
+                                    print("Dealer BUSTS! YOU WIN!")
+                                else:
+                                    print("The dealer stays with " + str(valued + valueu + valueu2) + ".")
+                                    if (valued + valueu + valueu2 + valueu3) > sum + value3 + value4:
+                                        print("DEALER WINS!")
+                                        exit
+                                    elif (valued + valueu + valueu2 + valueu3) == sum + value3 + value4:
+                                        print("You PUSH!")
+                                        exit                    
+                                    else: 
+                                        print("YOU WIN!")
+                                        exit
+                        else:
+                            print("The dealer stays with " + str(valued + valueu) + ".")
+                            if (valued + valueu + valueu2 + valueu3) > sum + value3 + value4:
+                                print("DEALER WINS!")
+                                exit
+                            elif (valued + valueu + valueu2 + valueu3) == sum + value3 + value4:
+                                print("You PUSH!")
+                                exit                    
+                            else: 
+                                print("YOU WIN!")
+                                exit
+    
+
