@@ -295,10 +295,10 @@ while True:
                         exit
         else:
             print("The dealer stays with " + str(valued + valueu) + ".")
-            if (valued + valueu + valueu2 + valueu3) > sum:
+            if (valued + valueu) > sum:
                 print("DEALER WINS!")
                 exit
-            elif (valued + valueu + valueu2 + valueu3) == sum:
+            elif (valued + valueu) == sum:
                 print("You PUSH!")
                 exit                    
             else: 
@@ -337,10 +337,10 @@ while True:
                             print("Dealer BUSTS! YOU WIN!")
                         else:
                             print("The dealer stays with " + str(valued + valueu + valueu2 + valueu3) + ".")
-                            if (valued + valueu + valueu2 + valueu3) > sum + value3:
+                            if (valued + valueu + valueu2) > sum + value3:
                                 print("DEALER WINS!")
                                 exit
-                            elif (valued + valueu + valueu2 + valueu3) == sum + value3:
+                            elif (valued + valueu + valueu2) == sum + value3:
                                 print("You PUSH!")
                                 exit                    
                             else: 
